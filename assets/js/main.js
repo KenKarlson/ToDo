@@ -6,7 +6,6 @@ const todoCompleted = document.querySelector('.todo-completed');
 const todoRemove = document.querySelector('.todo-remove');
 
 const todoData = [];
-//todoData = JSON.parse(localStorage.getItem('Task')) || [];
 const tasks = JSON.parse(localStorage.getItem('Task')) || [];
 tasks.forEach((item) => {
   todoData.push(item);
@@ -44,7 +43,9 @@ const render = function () {
         console.log(index);
       });
       todoData.splice(name, 1);
-      basicOperators();
+      //basicOperators();
+      toStorage();
+      render();
     });
 
   });
@@ -73,3 +74,5 @@ todoControl.addEventListener('submit', function (event) {
   }
 
 });
+
+render();
