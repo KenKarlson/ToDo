@@ -8,8 +8,8 @@ const todoRemove = document.querySelector('.todo-remove');
 const todoData = [];
 //todoData = JSON.parse(localStorage.getItem('Task')) || [];
 const tasks = JSON.parse(localStorage.getItem('Task')) || [];
-tasks.forEach((item, index) => {
-  todoData.push(item, index);
+tasks.forEach((item) => {
+  todoData.push(item);
 });
 
 const render = function () {
