@@ -33,16 +33,23 @@ const render = function () {
 
     li.querySelector('.todo-complete').addEventListener('click', function () {
       item.completed = !item.completed;
+      toStorage();
       render();
     });
     li.querySelector('.todo-remove').addEventListener('click', function () {
-      let names;
-      todoData.forEach(function (task, index) {
-        names = task.text;
-        console.log(names);
-        console.log(index);
-      });
-      todoData.splice(name, 1);
+
+      console.log(item);
+      todoData.splice(item, 1);
+      // let names;
+      // todoData.forEach(function (task, index) {
+      //   let textTodo = document.querySelector('.text-todo').textContent;
+      //   names = task.text;
+      //   if (names == textTodo) {
+      //     console.log(textTodo);
+      //   }
+
+      // });
+      //todoData.splice(name, 1);
       //basicOperators();
       toStorage();
       render();
